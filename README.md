@@ -9,12 +9,7 @@ This paper proposes the Continual Dual-Critic with Cross-Attention (CD-CCA) fram
 <table>
 <tr>
     <td align="left" width="10%">
-        Taking TSP as an example, the method calculates the distance matrix and node coordinates based on the problem instance. The results are then input to the Transformer, which generates the HM and PM. ACO constructs the initial solution and optimizes it using optional local search techniques. Finally, the method samples from the obtained solution and calculates the reward as feedback.
-        <br/>   <br/>
-        In modified Transformer, we depart from the standard query–key–value formulation and adopt a query–key-only variant that is tailored to constructing the PM and HM. 
-For each city $i$ in a TSP instance, the Transformer encoder outputs a shared query vector $q_i \in \mathbb{R}^d$ and two type-specific key vectors $k^{\text{p}}_i, k^{\text{h}}_i \in \mathbb{R}^d$ after linear projection and a ReLU nonlinearity.
-        <br/>   <br/>
-        In ACO, we generate the transition probability by leveraging the cooperation between the HM and PM. After constructing a solution, we further apply a candidate-solution perturbation mechanism to perform local search. 
+        CD-CCA framework. The visual encoder first extracts latent representations from observations, followed by three fully connected layers that produce feature projections $\mathit{z}$, $\mathit{z}_{1}$, and $\mathit{z}_{2}$. The shared embedding $\mathit{z}$ serves as the policy query, while $\mathit{z}_{1}$ and $\mathit{z}_{2}$ act as critic-specific keys in the cross-attention fusion module. Two critics—enhanced by CBP and EWC, respectively—estimate $Q_{1}$ and $Q_{2}$. The cross-attention mechanism adaptively fuses the two $Q$-values into a unified value $Q$, which guides actor training and exploration. The policy decoder outputs the action to interact with the environment.
     </td>
     <td align="center" width="10%"><img src="https://github.com/sunbo5202/CD-CCA/figframework.png" 
         alt="motivation"/>
