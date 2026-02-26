@@ -16,7 +16,7 @@ For each city $i$ in a TSP instance, the Transformer encoder outputs a shared qu
         <br/>   <br/>
         In ACO, we generate the transition probability by leveraging the cooperation between the HM and PM. After constructing a solution, we further apply a candidate-solution perturbation mechanism to perform local search. 
     </td>
-    <td align="center" width="10%"><img src="https://github.com/sunbo5202/TransACO/blob/main/Fig/Framework.png" 
+    <td align="center" width="10%"><img src="https://github.com/sunbo5202/CD-CCA/figframework.png" 
         alt="motivation"/>
     </td>
 </tr>
